@@ -48,7 +48,7 @@ async function construct({ client, maximumAmount, limit, feeRate }) {
                 feeRate: fR,
             });
         } catch (e) {
-            if (e.message === "Transaction too large") {
+            if (e.message === "Transaction too large for fee policy") {
                 end = sliceTo;
                 sliceTo = start + Math.floor((end - start) / 2);
                 continue;
